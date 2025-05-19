@@ -1,0 +1,15 @@
+name: Pull and Run BusyBox on Windows Docker Desktop
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-busybox:
+    runs-on: self-hosted
+
+    steps:
+      - name: Pull BusyBox image
+        run: docker pull busybox
+
+      - name: Run BusyBox container
+        run: docker run busybox echo "Hello from BusyBox on Windows!"
