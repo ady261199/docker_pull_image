@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: login to docker hub
-        run: echo "${{ ady261199@gmail.com }}" | docker login -u "${{ Cloudlearning@26 }}" --password-stdin
+        run: echo "${{ady261199}}" | docker login -u "${{Cloudlearning@26}}" --password-stdin
       
       - name: Pull BusyBox image
         run: docker pull busybox
