@@ -5,9 +5,12 @@ on:
 
 jobs:
   run-busybox:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
+      - name: login to docker hub
+        run: echo "${{ secrets.DOCKER_PASSWOORD }} | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      
       - name: Pull BusyBox image
         run: docker pull busybox
 
