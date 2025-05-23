@@ -3,7 +3,7 @@ name: MongoDB with Docker and Import JSON
 on:
   push:
     paths:
-      - 'data.json'
+      - 'file.json'
       - '.github/workflows/mongo-docker.yml'
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
 
     - name: Import Data into MongoDB
       run: |
-        docker exec mongodb mongoimport --db mydb --collection users --file /data.json --jsonArray
+        docker exec mongodb mongoimport --db mydb --collection users --file /file.json --jsonArray
 
     - name: Verify Import
       run: |
