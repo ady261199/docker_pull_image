@@ -29,8 +29,7 @@ jobs:
 
     - name: Verify Import
       run: |
-        docker run --rm --network host mongo:latest \
-        mongo --host localhost --eval "db.users.find().pretty()" mydb
-
+        docker run --rm --network container:mongodb mongo:5.0 \
+        mongo --eval "db.users.find().pretty()" mydb
     - name: Stop and Remove Container
       run: docker rm -f mongodb
