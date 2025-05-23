@@ -1,10 +1,7 @@
 name: MongoDB with Docker and Import JSON
 
 on:
-  push:
-    paths:
-      - 'file.json'
-      - '.github/workflows/mongo-docker.yml'
+  workflow_dispatch:
 
 jobs:
   mongo-docker-import:
